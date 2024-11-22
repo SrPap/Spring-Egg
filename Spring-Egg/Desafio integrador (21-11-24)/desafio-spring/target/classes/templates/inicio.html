@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav class="navBar">
+        <div class="elementosNav">
+            <a href="/articulos/lista" class="elementos">Ver Artículos</a>
+            <a href="/fabricas/lista" class="elementos">Ver Fábricas</a>
+            <a href="/articulos/crear" th:if="${#authentication?.principal?.authorities?.contains('ROLE_ADMIN')}" class="elementos">Crear Artículo</a>
+            <a href="/fabricas/crear" th:if="${#authentication?.principal?.authorities?.contains('ROLE_ADMIN')}" class="elementos">Crear Fábrica</a>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="containerImg">
+            <img src="/img/inicio.jpg" alt="Imagen de inicio" class="logo">
+        </div>
+        <h1 class="tituloBiblioteca">Bienvenido</h1>
+    </header>
+
+    <main class="contenedorMain">
+        <div class="contenedorLibros">
+            <h2 class="tituloLibros">Explora nuestra colección de libros y artículos</h2>
+        </div>
+    </main>
+
+    <footer class="containerFooter">
+        <a href="https://facebook.com" target="_blank"><img src="/img/facebook-icon" alt="Facebook"></a>
+        <a href="https://instagram.com" target="_blank"><img src="/img/instagram-icon" alt="Instagram"></a>
+        <a href="/ayuda"><img src="/img/help-icon" alt="Ayuda"></a>
+    </footer>
+</body>
+</html>
